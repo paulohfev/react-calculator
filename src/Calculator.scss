@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 12rem;
+
+  .result {
+    align-items: center;
+    background-color: #4D82AC;
+    color: #FFFFFF;
+    display: inherit;
+    justify-content: flex-end;
+    height: 4rem;
+    padding: 1rem;
+    width: 100%;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+
+  .button {
+    align-items: center;
+    cursor: pointer;
+    border: 0.0625rem solid gray;
+    display: inherit;
+    height: 4rem;
+    justify-content: center;
+
+    &.number {
+      width: 4rem;
+    }
+
+    &.clear {
+      width: 100%;
+    }
+  }
+}
