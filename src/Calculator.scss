@@ -20,9 +20,19 @@
   }
 }
 
-.buttons {
+.keypad {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+
+  .button-group-top {
+    display: inherit;
+    justify-content: space-between;
+  }
+
+  .button-group-middle {
+    display: inherit;
+    flex-wrap: wrap;
+  }
 
   .button {
     align-items: center;
@@ -32,16 +42,12 @@
     height: 4rem;
     justify-content: center;
 
-    &.number, &.operator {
+    &.small {
       width: 4rem;
     }
 
-    &.clear {
+    &.large {
       width: 100%;
-    }
-
-    &.equals {
-      width: 8rem;
     }
   }
 }
