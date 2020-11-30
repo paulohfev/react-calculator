@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+
+.calculator {
+  background-color: #696969;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 28rem;
+
+  .result {
+    align-items: center;
+    background-color: #E7E7E7;
+    border-radius: 0.5rem;
+    display: inherit;
+    height: 4rem;
+    justify-content: flex-end;
+    margin-bottom: 0.625rem;
+    padding: 1rem;
+    width: 100%;
+
+    h2 {
+      margin: 0;
+    }
+  }
+}
+
+$grid-areas: (
+  "1": backspace, "2": clear, "3": seven, "4": eight, "5": nine, "6": four,
+  "7": five, "8": six, "9": one, "10": two, "11": three, "12": zero,
+  "13": plus, "14": minus, "15": multiply, "16": divide, "17": equals
+);
+
+.keypad {
+  display: grid;
+  column-gap: 0.625rem;
+  row-gap: 0.625rem;
+
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: repeat(5, 4rem);
+  grid-template-areas:
+    "backspace backspace clear clear"
+    "seven eight nine plus"
+    "four five six minus"
+    "one two three multiply"
+    "zero zero equals divide"
+    ;
+
+  @each $placement, $area in $grid-areas {
+    .button:nth-of-type(#{$placement}) {
+      grid-area: $area;
+    }
+  } 
+
+  .button {
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+
+    // &:nth-of-type(1) {
+    //   grid-area: backspace;
+    // }
+
+    // &:nth-of-type(2) {
+    //   grid-area: clear;
+    // }
+
+    // &:nth-of-type(3) {
+    //   grid-area: seven;
+    // }
+
+    // &:nth-of-type(4) {
+    //   grid-area: eight;
+    // }
+
+    // &:nth-of-type(5) {
+    //   grid-area: nine;
+    // }
+
+    // &:nth-of-type(6) {
+    //   grid-area: four;
+    // }
+
+    // &:nth-of-type(7) {
+    //   grid-area: five;
+    // }
+
+    // &:nth-of-type(8) {
+    //   grid-area: six;
+    // }
+
+    // &:nth-of-type(9) {
+    //   grid-area: one;
+    // }
+
+    // &:nth-of-type(10) {
+    //   grid-area: two;
+    // }
+
+    // &:nth-of-type(11) {
+    //   grid-area: three;
+    // }
+
+    // &:nth-of-type(12) {
+    //   grid-area: zero;
+    // }
+
+    // &:nth-of-type(13) {
+    //   grid-area: plus;
+    // }
+
+    // &:nth-of-type(14) {
+    //   grid-area: minus;
+    // }
+
+    // &:nth-of-type(15) {
+    //   grid-area: multiply;
+    // }
+
+    // &:nth-of-type(16) {
+    //   grid-area: divide;
+    // }
+
+    // &:nth-of-type(17) {
+    //   grid-area: equals;
+    // }
+
+    &:nth-of-type(n+13):nth-of-type(-n+17) {
+      background-color: #FF9900;
+    }
+  }
+}

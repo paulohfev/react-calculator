@@ -1,5 +1,5 @@
 import React from 'react';
-import Calculator from './Calculator';
+import Calculator from './components/Calculator';
 
 const App = () => {
   return (
@@ -11,6 +11,6 @@ const App = () => {
       <Calculator />
     </div>
   );
-}
+};
 
 export default App;
