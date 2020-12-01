@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Calculator.scss';
 import Button from './Button';
+import ResultScreen from './ResultScreen';
 
 const Calculator = () => {
   const initialState = "";
@@ -8,25 +9,23 @@ const Calculator = () => {
   // console.log(result, "| I was rendered");
 
   const displayValue = event => {
-    setResult(result + event.target.value);
+    setResult(prevResult => prevResult + event.target.value);
   };
 
   const removeSingleValue = () => {
-    setResult(result.length - 1)
+    if (result.length > 0) setResult(prevResult => prevResult.slice(0, -1));
   };
 
   const calculateValue = () => {
-    if (result.length > 0) setResult(eval(result));
+    if (result.length > 0) setResult(prevResult => eval(prevResult));
   };
 
   return (
     <div className="calculator">
-      <div className="result">
-        <h2>{result}</h2>
-      </div>
+      <ResultScreen result={result} />
 
       <div className="keypad">
-        <Button name="&#11157;" onClick={() => removeSingleValue} />
+        <Button name="&#11157;" onClick={removeSingleValue} />
         <Button name="Clear" onClick={() => setResult(initialState)} />        
         <Button value="7" onClick={displayValue} />
         <Button value="8" onClick={displayValue} />
