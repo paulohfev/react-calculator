@@ -13,12 +13,12 @@ const Keypad = ({ result, setResult }) => {
   };
 
   const calculateValue = () => {
-    if (result.length > 0) setResult(prevResult => eval(prevResult));
+    if (!(result === "")) setResult(prevResult => eval(prevResult));
   };
 
-  const valueButtons = ['7', '8', '9', '4', '5', '6', '1', '2', '3', '0', '+', '-', 'x', '/'];
+  const valueButtons = ['7', '8', '9', '4', '5', '6', '1', '2', '3', '0', '+', '-', '*', '/'];
   const valueButtonsList = valueButtons.map((value) => {
-    return <Button value={value} onClick={displayValue} />
+    return <Button key={value} value={value} onClick={displayValue} />
   });
 
   return (
