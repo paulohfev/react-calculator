@@ -21,5 +21,6 @@ $grid-areas: (
 
   &:nth-of-type(n+13):nth-of-type(-n+17) {
     background-color: #FF9900;
+    font-size: 1.5rem;
   }
 }
