@@ -5,7 +5,6 @@ import Keypad from './Keypad';
 
 const Calculator = () => {
   const [result, setResult] = useState("");
-  // console.log(result, "| I was rendered");
 
   return (
     <div className="calculator">

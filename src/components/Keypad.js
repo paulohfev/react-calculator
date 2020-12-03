@@ -13,10 +13,11 @@ const Keypad = ({ result, setResult }) => {
   };
 
   const calculateValue = () => {
-    if (!(result === "")) setResult(prevResult => eval(prevResult));
+    // eslint-disable-next-line
+    if (result.length > 0) setResult(prevResult => eval(prevResult));
   };
 
-  const valueButtons = ['7', '8', '9', '4', '5', '6', '1', '2', '3', '0', '+', '-', '*', '/'];
+  const valueButtons = ['7', '8', '9', '4', '5', '6', '1', '2', '3', '.', '0', '+', '-', '*', '/'];
   const valueButtonsList = valueButtons.map((value) => {
     return <Button key={value} value={value} onClick={displayValue} />
   });

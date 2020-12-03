@@ -2,8 +2,8 @@
 
 $grid-areas: (
   "1": backspace, "2": clear, "3": seven, "4": eight, "5": nine, "6": four,
-  "7": five, "8": six, "9": one, "10": two, "11": three, "12": zero,
-  "13": plus, "14": minus, "15": multiply, "16": divide, "17": equals
+  "7": five, "8": six, "9": one, "10": two, "11": three, "12": decimal, "13": zero,
+  "14": plus, "15": minus, "16": multiply, "17": divide, "18": equals
 );
 
 .button {
@@ -19,8 +19,11 @@ $grid-areas: (
     }
   }
 
-  &:nth-of-type(n+13):nth-of-type(-n+17) {
-    background-color: #FF9900;
+  &:nth-of-type(12), &:nth-of-type(n+14):nth-of-type(-n+18) {
     font-size: 1.5rem;
+  }
+
+  &:nth-of-type(n+14):nth-of-type(-n+18) {
+    background-color: #FF9900;
   }
 }
